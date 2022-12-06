@@ -1,0 +1,32 @@
+main{
+  position: absolute;
+  top: 15%;
+  left: 37%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+main p{
+  font-family: 'M PLUS 1p', sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+}
+main form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+main input[type="text"]{
+  width: 400px;
+  height: 50px;
+  font-size: 22px;
+}
+main button{
+  width: 50px;
+  margin-top: 20px;
+}
