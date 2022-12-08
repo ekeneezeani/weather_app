@@ -1,19 +1,37 @@
-main{
+body,html{
+  height: 100%;
+  margin: 0;
+  
+ }
+
+#background{
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/weather.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-container{
   position: absolute;
-  top: 15%;
-  left: 37%;
+  top: 5%;
+  left: 33%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:flex-start;
   align-items: center;
-  
+  background-color: white;
+  width: 500px;
+  height: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px  black;
 }
-main p{
+.main-container p{
   font-family: 'M PLUS 1p', sans-serif;
   font-weight: bolder;
   font-size: 30px;
 }
-main form{
+.main-container form{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,12 +39,23 @@ main form{
   
 }
 
-main input[type="text"]{
+.main-container input[type="text"]{
   width: 400px;
   height: 50px;
   font-size: 22px;
+  
 }
-main button{
+
+.main-container input[type="text"]:focus{
+  outline: none;
+}
+.main-container button{
   width: 50px;
   margin-top: 20px;
 }
+.weather{
+  margin-top: 20px;
+}
+
+
+

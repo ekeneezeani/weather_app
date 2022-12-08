@@ -12,20 +12,20 @@
   <title>Document</title>
 </head>
 <body>
-
-  <main>
-    <p>Weather Information</p>
-    <div>
-      <form>
-        <input type="text" name="location" placeholder="Enter the City"/>
-        <button>
-          <i class="fa-solid fa-location-dot fa-3x"></i>
-          
-        </button>
-      </form>
-    </div>
+  <main id="background">
+    <div class="main-container">
+      <p>Weather Information</p>
+        <div>
+          <form id="input-form">
+            <input type="text" name="location" placeholder="Enter the City" autocomplete="off" id="city"/>
+            <button>
+              <i class="fa-solid fa-location-dot fa-3x"></i>
+              
+            </button>
+          </form>
+        </div>
     <div class="weather">
-
+      <i class="fa-solid fa-cloud fa-5x"></i>
     </div>
     <div class="temprature">
 
@@ -33,7 +33,10 @@
     <div class="city">
 
     </div>
+  </div>
   </main>
-  
+
+  <script src="/app.js"></script>
+
 </body>
 </html>
