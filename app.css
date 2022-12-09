@@ -55,8 +55,20 @@ body,html{
 }
 .weather{
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
 }
-
+.temperature, .description, .city{
+  height: 50px;
+}
+.description p{
+  font-size: 20px;
+  font-weight: lighter;
+  padding-top: 5px;
+  text-transform: capitalize;
+}
 .weather-icon img{
   width: 100px;
   height: 100px;
