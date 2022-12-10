@@ -12,12 +12,34 @@ let city = "";
 let count = 1;
 let weather = {};
 const KELVIN = 273.15
-let longitude = 0.00;
-let latitude = 0.00;
+// let longitude = 0.00;
+// let latitude = 0.00;
 
 /**Display the weather of your present location */
 btnLocation.addEventListener('click',function(){
-  getWeatherByPresentLocation(longitude,latitude)
+
+  /**to get long and lat of current location */
+  if('geolocation' in navigator){
+    navigator.geolocation.getCurrentPosition(setPosition,showError)
+  }else{
+    alert("Browser does not support geolocation")
+  }
+
+
+  /**Callback function for getCurrentPosition method */
+  function setPosition(position){
+    const longitude = position.coords.longitude
+    const  latitude = position.coords.latitude
+
+      console.log(longitude,latitude)
+      getWeatherByPresentLocation(longitude,latitude)
+      
+  }
+
+  /**Callback function for getCurrentPosition method */
+  function showError(error){
+    console.log(error)
+  }
 })
 
 /**Prevent form submission when Enter key is pressed */
@@ -25,31 +47,10 @@ form.addEventListener('submit',function(event){
   event.preventDefault()
 })
 
-/**to get long and lat of current location */
 
-if('geolocation' in navigator){
-  navigator.geolocation.getCurrentPosition(setPosition,showError)
-}else{
-  alert("Browser does not support geolocation")
-}
-
-/**Callback function for getCurrentPosition method */
-function setPosition(position){
-  longitude = position.coords.longitude
-  latitude = position.coords.latitude
-
-  console.log(longitude,latitude)
-  getWeatherByPresentLocation(longitude,latitude)
-  
-}
-
-/**Callback function for getCurrentPosition method */
-function showError(error){
-  console.log(error)
-}
 
 function getWeatherByPresentLocation(longitude, latitude){
-  const data = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}.34&lon=${longitude}.99&appid=237535420ba7973ff08b88e2d19afb48`)
+  const data = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=237535420ba7973ff08b88e2d19afb48`)
   .then((response)=>{
    return response.json()
   })
